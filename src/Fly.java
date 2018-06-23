@@ -34,7 +34,7 @@ public class Fly extends JLabel implements Runnable {
     @Override
     public void run() {
         while (true){
-            objX -= 2;
+            objX -= 5;
             Fly.this.setBounds(objX , objY , 189 , 241);
             if (objX <= - 190){
                 Fly.this.show = false ;

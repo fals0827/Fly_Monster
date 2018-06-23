@@ -27,6 +27,9 @@ public class MainFrame extends JFrame {
         jpn.add(monster[0]);
         jpn.add(monster[1]);
         jpn.add(monster[2]);
+        monster[0].setBounds(1280 ,0  , 50 , 63);
+        monster[1].setBounds(1280 ,0  , 50 , 63);
+        monster[2].setBounds(1280 ,0  , 50 , 63);
         Thread thread_Monster0 = new Thread(monster[0]);
         Thread thread_Monster1 = new Thread(monster[1]);
         Thread thread_Monster2 = new Thread(monster[2]);
@@ -34,7 +37,7 @@ public class MainFrame extends JFrame {
         thread_Monster1.start();
         thread_Monster2.start();
 
-        t1 = new Timer(200, new ActionListener() {
+        t1 = new Timer(500, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int r = rnd.nextInt(4)+1;
