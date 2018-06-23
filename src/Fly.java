@@ -33,16 +33,17 @@ public class Fly extends JLabel implements Runnable {
 
     @Override
     public void run() {
-        Timer go = new Timer(5, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Fly.this.setBounds(objX - 2 , objY , 189 , 241);
-                if (objX <= - 190){
-                    Fly.this.show = false ;
-                }
+        while (true){
+            objX -= 2;
+            Fly.this.setBounds(objX , objY , 189 , 241);
+            if (objX <= - 190){
+                Fly.this.show = false ;
             }
-        });
-
-        go.start();
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

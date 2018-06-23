@@ -30,6 +30,9 @@ public class MainFrame extends JFrame {
         Thread thread_Monster0 = new Thread(monster[0]);
         Thread thread_Monster1 = new Thread(monster[1]);
         Thread thread_Monster2 = new Thread(monster[2]);
+        thread_Monster0.start();
+        thread_Monster1.start();
+        thread_Monster2.start();
 
         t1 = new Timer(200, new ActionListener() {
             @Override
@@ -40,17 +43,17 @@ public class MainFrame extends JFrame {
                         monster[0].setShow(true);
                         monster[0].setObjX(1280);
                         monster[0].setObjY(rnd.nextInt(700));
-                        thread_Monster0.start();
+
                     }else if (!monster[1].getShow()){
                         monster[1].setShow(true);
                         monster[1].setObjX(1280);
                         monster[1].setObjY(rnd.nextInt(700));
-                        thread_Monster1.start();
+
                     }else if (!monster[2].getShow()){
                         monster[2].setShow(true);
                         monster[2].setObjX(1280);
                         monster[2].setObjY(rnd.nextInt(700));
-                        thread_Monster2.start();
+
                     }
                 }
             }
